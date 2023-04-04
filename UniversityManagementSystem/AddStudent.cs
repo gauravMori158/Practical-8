@@ -17,21 +17,21 @@ namespace UniversityManagementSystem
         /// <param name="userData"></param>
         public void AddNewStudent(IUserData userData)
         {
-            Dictionary<int, StudentClass> dict = userData.GetDictionary;
+            Dictionary<int, StudentClass> dict = userData.UserDictionary;
             try
             {
 
                 Console.WriteLine("..........Add UserInfo..........");
                 Console.WriteLine("Enter Unique Id ");
 
-                int id = Convert.ToInt32(Console.ReadLine());
+                  int.TryParse(Console.ReadLine(), out int id);
 
-                Dictionary<int, StudentClass> dictionary = userData.GetDictionary;
+                Dictionary<int, StudentClass> dictionary = userData.UserDictionary;
 
                 if (dictionary.ContainsKey(id))
                 {
                     Console.WriteLine("Id is already present, Please provide unique");
-                    id = Convert.ToInt32(Console.ReadLine());
+                    int.TryParse(Console.ReadLine(), out   id);
                 }
 
                 Console.WriteLine("Enter The Name  ");

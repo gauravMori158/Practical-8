@@ -7,6 +7,19 @@ using System.Xml.Linq;
 
 namespace UniversityManagementSystem
 {
+    static class PrintInfo
+    {
+        public static string PrintDictionary (this Dictionary<int, StudentClass> dict)
+        {
+            string returnString="";
+            foreach (KeyValuePair<int, StudentClass> std in dict)
+            {
+                returnString +=$"\nName : {std.Value.Name} \nId : {std.Key}\nPhone No : {std.Value.PhoneNo} " +
+              $"\nEmail : {std.Value.Email}\n";
+            }
+            return returnString;
+        }
+    }
     sealed class StudentInfo : StudentClass, IStudentInfo
     {            
         /// <summary>
@@ -20,7 +33,7 @@ namespace UniversityManagementSystem
         public void ViewDetail(IUserData userData, int id)
         {
 
-            Dictionary<int, StudentClass> dict = userData.GetDictionary;
+            Dictionary<int, StudentClass> dict = userData.UserDictionary;
             IStudentClass student = FactoryClass.GetStudentInfo();
             try
             {
@@ -46,15 +59,10 @@ namespace UniversityManagementSystem
         public void ViewDetail(IUserData userData)
         {
 
-            Dictionary<int, StudentClass> dict = userData.GetDictionary;
+            Dictionary<int, StudentClass> dict = userData.UserDictionary;
 
             Console.WriteLine("\n\n........All Students...........");
-
-            foreach (KeyValuePair<int, StudentClass> std in dict)
-            {
-                Console.WriteLine($"\nName : {std.Value.Name} \nId : {std.Key}\nPhone No : {std.Value.PhoneNo} " +
-               $"\nEmail : {std.Value.Email}\n");
-            }
+            Console.WriteLine(dict.PrintDictionary()); 
         }
 
     }

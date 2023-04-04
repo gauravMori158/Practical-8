@@ -39,9 +39,9 @@ namespace UniversityManagementSystem
 
                 try
                 {
-                    int option = Convert.ToInt32(Console.ReadLine());
+                    
 
-
+                    int.TryParse(Console.ReadLine(), out int option);
                     IStudentInfo student = FactoryClass.GetStudentInfo();
                     IAddStudent addStudent = FactoryClass.GetAddStudent();
 

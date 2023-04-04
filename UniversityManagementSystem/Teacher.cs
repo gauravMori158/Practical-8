@@ -24,8 +24,8 @@ namespace UniversityManagementSystem
                 Console.WriteLine("..........Update UserInfo..........");
                 Console.WriteLine("Enter User Id : ");
 
-                int id = Convert.ToInt32(Console.ReadLine());
-                Dictionary<int, StudentClass> dictionary = userData.GetDictionary;
+                  int.TryParse(Console.ReadLine(),out int id);
+                Dictionary<int, StudentClass> dictionary = userData.UserDictionary;
 
                 Console.WriteLine("Enter The Name You Want to Update");
                 dictionary[id].Name = Console.ReadLine();
@@ -61,7 +61,7 @@ namespace UniversityManagementSystem
             if (confirm == 'y')
             {
                 Console.WriteLine(" Deleted User  ");
-                Dictionary<int, StudentClass> dictionary = userData.GetDictionary;
+                Dictionary<int, StudentClass> dictionary = userData.UserDictionary;
                 Console.WriteLine($"Name : {dictionary[id].Name} \t Id : {id}");
                 dictionary.Remove(id);
             }

@@ -2,6 +2,6 @@
 {
     internal interface IUserData
     {
-        Dictionary<int, StudentClass> GetDictionary { get; set; }
+        Dictionary<int, StudentClass> UserDictionary { get; set; }
     }
 }

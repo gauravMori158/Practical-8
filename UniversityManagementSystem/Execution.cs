@@ -41,7 +41,7 @@ namespace UniversityManagementSystem
             });
 
 
-            userData.GetDictionary = StudentDictionary;
+            userData.UserDictionary = StudentDictionary;
 
             IHigherLevelClass levelClass = FactoryClass.GetHigherLevelMethod();
             levelClass.HigherLevelDependent(userData);

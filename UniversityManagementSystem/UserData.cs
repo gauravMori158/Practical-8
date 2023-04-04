@@ -9,7 +9,7 @@ namespace UniversityManagementSystem
     sealed class UserData : IUserData
     {
         private Dictionary<int, StudentClass> _studentData = new Dictionary<int, StudentClass>();
-        public Dictionary<int, StudentClass> GetDictionary
+        public Dictionary<int, StudentClass> UserDictionary
         {
             get
             {
